@@ -56,7 +56,7 @@ Have the following packages:
 
 [Repository](https://github.com/Gera1313/12-employee-tracker)
 
-[Video]()
+[Video](https://youtu.be/MP4zhBCbCsM)
 
 
 ## Credits
