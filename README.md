@@ -38,13 +38,25 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 The following images show the web application's appearance and functionality. Keep in mind this is a work in progress. It is not complete yet. 
 
+![A generated README file]() 
+
 
 ## Installation
 
+Have the following packages: 
+
+1. node.js
+2. npm
+3. Inquirer 8.2.4
+4. dotenv 16.3.1
+5. mysql2 3.6.0
 
 
 ## Links
 
+[Repository](https://github.com/Gera1313/12-employee-tracker)
+
+[Video]()
 
 
 ## Credits
