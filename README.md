@@ -36,6 +36,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Usage
 
+The following images show the web application's appearance and functionality. Keep in mind this is a work in progress. It is not complete yet. 
 
 
 ## Installation
