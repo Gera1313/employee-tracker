@@ -65,6 +65,6 @@ Would like to thank my classmates and work colleagues for the guidance.
 
 Also, big help thanks to the module activities especially module 12. 
 
-## Licenses
+## License
 
-MIT License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
