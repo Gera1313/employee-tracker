@@ -34,13 +34,6 @@ WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 ```
 
-## Usage
-
-The following images show the web application's appearance and functionality. Keep in mind this is a work in progress. It is not complete yet. 
-
-![A generated README file](./Assets/Images/Home.png) 
-
-
 ## Installation
 
 Have the following packages: 
@@ -51,10 +44,19 @@ Have the following packages:
 4. dotenv 16.3.1
 5. mysql2 3.6.0
 
+## Notes
+
+Will work on this project and fix the issues. 
+
+## Usage
+
+The following images show the web application's appearance and functionality. Keep in mind this is a work in progress. It is not complete yet. 
+
+![A generated README file](./Assets/Images/Home.png) 
 
 ## Links
 
-[Repository](https://github.com/Gera1313/12-employee-tracker)
+[Repository](https://github.com/Gera1313/employee-tracker)
 
 [Video](https://youtu.be/MP4zhBCbCsM)
 
