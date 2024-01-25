@@ -1,8 +1,8 @@
 # Employee Tracker
 
-## The Task
+## The Project
 
-Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. The assignment is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. I am building a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
 ## User Story
 
