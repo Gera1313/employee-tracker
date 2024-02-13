@@ -46,7 +46,8 @@ Have the following packages:
 
 ## Notes
 
-Will work on this project and fix the issues. 
+Updates: 
+Feb 12, 2024: Will work on this project and fix the issues. 
 
 ## Usage
 
@@ -63,9 +64,7 @@ The following images show the web application's appearance and functionality. Ke
 
 ## Credits
 
-Would like to thank my classmates and work colleagues for the guidance.
-
-Also, big help thanks to the module activities especially module 12. 
+Would like to thank my classmates and work colleagues for the guidance. 
 
 ## License
 
