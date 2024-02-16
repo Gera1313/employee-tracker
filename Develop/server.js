@@ -22,10 +22,16 @@ function startInquire() {
             type: "list",
             name: "choice",
             message: "What would you like to do?",
-            choices: ["View all Departments", "View all Roles", "View all Employees",
-            "Add a department", "Add a role", "Add an employee",
-            "Update employee role",
-            "Exit"],
+            choices: [
+                "View all Departments",
+                "View all Roles",
+                "View all Employees",
+                "Add a department",
+                "Add a role",
+                "Add an employee",
+                "Update employee role",
+                "Exit"
+            ],
         },
     ])
 }
