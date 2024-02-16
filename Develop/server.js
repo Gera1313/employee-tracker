@@ -35,21 +35,7 @@ function startInquire() {
     .then((answers) => {
       switch (answers.choice) {
         case "View all Departments":
-          // TODO: write call function to view all departments
-          function viewAllDepartments() {
-            const sql = "SELECT * FROM department";
-            db.query(sql, (err, results) => {
-                if (err) {
-                    console.error("Error retrieving departments:", err); 
-                    return;
-                }
-                // here we process the results and display the departments
-                console.log("\nAll Departmenets:");
-                results.forEach((department) => {
-                    console.log(`${department.id}: ${department.name}`);
-                });
-            });
-          }
+          viewAllDepartments();
           break;
         case "View all Roles":
           // TODO: come back and write function to view all roles
@@ -77,6 +63,24 @@ function startInquire() {
       }
     });
 }
+
+// FUNCTIONS in the .then
+
+// Function to view all departments
+function viewAllDepartments() {
+    const sql = "SELECT * FROM department";
+    db.query(sql, (err, results) => {
+      if (err) {
+        console.error("Error retrieving departments:", err);
+        return;
+      }
+      // here we process the results and display the departments
+      console.log("\nAll Departmenets:");
+      results.forEach((department) => {
+        console.log(`${department.id}: ${department.name}`);
+      });
+    });
+  }
 
 startInquire();
 
