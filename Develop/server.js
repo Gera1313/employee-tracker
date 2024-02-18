@@ -38,7 +38,7 @@ function startInquire() {
           viewAllDepartments();
           break;
         case "View all Roles":
-          // TODO: come back and write function to view all roles
+          viewAllRoles();
           break;
         case "View all Employees":
           // TODO: write call function to view all employees
@@ -80,6 +80,24 @@ function viewAllDepartments() {
         console.log(`${department.id}: ${department.name}`);
       });
     });
+  }
+
+  // Function to view all roles
+  function viewAllRoles() {
+    const sql = "SELECT * FROM role";
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error("Error retrieving roles:", err);
+            return;
+        }
+
+        // here we process the results and display the roles
+        console.log("\nAll Roles:");
+        results.forEach((role) => {
+            console.log(`${role.id}: ${role.title} - Salary: ${role.salary}`);
+        });
+    });
+
   }
 
 startInquire();
