@@ -142,7 +142,17 @@ function addDepartment() {
 }
 
 // Function to add a role
-
+function addRole() {
+    // this will prompt user to enter role details
+    inquirer
+    .prompt([
+        {
+            type:
+            name: "title",
+            message
+        }
+    ])
+}
 
 startInquire();
 
