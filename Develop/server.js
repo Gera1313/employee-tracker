@@ -44,7 +44,7 @@ function startInquire() {
           viewAllEmployees();
           break;
         case "Add a department":
-          // TODO: write call function to add a department
+          addDepartment();
           break;
         case "Add a role":
           // TODO: write call function to add a role
@@ -98,7 +98,7 @@ function viewAllRoles() {
   });
 }
 
-// function to view all employees
+// Function to view all employees
 function viewAllEmployees() {
   const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title AS role, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
                  FROM employee
@@ -115,6 +115,30 @@ function viewAllEmployees() {
     console.log("\nAll Employees:");
     console.table(results);
   });
+}
+
+// Function to add a department
+function addDepartment() {
+    inquirer
+    .prompt([
+        {
+            type: "input",
+            name: "departmentName",
+            message: "Enter the name of the new department",
+        },
+    ])
+    .then((answers) => {
+        const sql = "INSERT INTO department (name) VALUES (?)";
+        const values = [answers.departmentName];
+
+        db.query(sql, values, (err, result) => {
+            if (err) {
+                console.error("Error adding department:", err);
+                return;
+            }
+            console.log("New department added successfully!");
+        });
+    });
 }
 
 startInquire();
