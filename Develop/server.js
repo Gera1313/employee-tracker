@@ -47,7 +47,7 @@ function startInquire() {
           addDepartment();
           break;
         case "Add a role":
-          // TODO: write call function to add a role
+          addRole();
           break;
         case "Add an employee":
           // TODO: write call function to add an employee
@@ -140,6 +140,9 @@ function addDepartment() {
         });
     });
 }
+
+// Function to add a role
+
 
 startInquire();
 
