@@ -41,7 +41,7 @@ function startInquire() {
           viewAllRoles();
           break;
         case "View all Employees":
-          // TODO: write call function to view all employees
+          viewAllEmployees();
           break;
         case "Add a department":
           // TODO: write call function to add a department
@@ -68,37 +68,54 @@ function startInquire() {
 
 // Function to view all departments
 function viewAllDepartments() {
-    const sql = "SELECT * FROM department";
-    db.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error retrieving departments:", err);
-        return;
-      }
-      // here we process the results and display the departments
-      console.log("\nAll Departmenets:");
-      results.forEach((department) => {
-        console.log(`${department.id}: ${department.name}`);
-      });
+  const sql = "SELECT * FROM department";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error retrieving departments:", err);
+      return;
+    }
+    // here we process the results and display the departments
+    console.log("\nAll Departmenets:");
+    results.forEach((department) => {
+      console.log(`${department.id}: ${department.name}`);
     });
-  }
+  });
+}
 
-  // Function to view all roles
-  function viewAllRoles() {
-    const sql = "SELECT * FROM role";
-    db.query(sql, (err, results) => {
-        if (err) {
-            console.error("Error retrieving roles:", err);
-            return;
-        }
-
-        // here we process the results and display the roles
-        console.log("\nAll Roles:");
-        results.forEach((role) => {
-            console.log(`${role.id}: ${role.title} - Salary: ${role.salary}`);
-        });
+// Function to view all roles
+function viewAllRoles() {
+  const sql = "SELECT * FROM role";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error retrieving roles:", err);
+      return;
+    }
+    // here we process the results and display the roles
+    console.log("\nAll Roles:");
+    results.forEach((role) => {
+      console.log(`${role.id}: ${role.title} - Salary: ${role.salary}`);
     });
+  });
+}
 
-  }
+// function to view all employees
+function viewAllEmployees() {
+  const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title AS role, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
+                 FROM employee
+                 INNER JOIN role ON employee.role_id = role.id
+                 INNER JOIN department ON role.department_id = department.id
+                 LEFT JOIN employee AS manager ON employee.manager_id = manager.id`;
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error retrieving employees:", err);
+      return;
+    }
+    // Displays the formatted table
+    console.log("\nAll Employees:");
+    console.table(results);
+  });
+}
 
 startInquire();
 
