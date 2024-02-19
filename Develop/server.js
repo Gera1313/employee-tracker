@@ -50,7 +50,7 @@ function startInquire() {
           addRole();
           break;
         case "Add an employee":
-          // TODO: write call function to add an employee
+          addEmployee();
           break;
         case "Update employee role":
           // TODO: write call function to update employee role
@@ -177,6 +177,10 @@ function addRole() {
     });
 }
 
+// Function to add an employee
+
 startInquire();
 
 // NOTE: looked at INS and STU code from the Modules to get boilerplate code and examples.
+
+//testing testing testing 
