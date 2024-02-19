@@ -182,5 +182,3 @@ function addRole() {
 startInquire();
 
 // NOTE: looked at INS and STU code from the Modules to get boilerplate code and examples.
-
-//testing testing testing 
