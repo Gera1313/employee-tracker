@@ -178,6 +178,18 @@ function addRole() {
 }
 
 // Function to add an employee
+function addEmployee() {
+  // this will prompt the user to add employee details
+  inquirer
+  .prompt([
+    {
+      type: "input",
+      name: "firstName",
+      message: "Enter the first name of the new employee",
+    },
+    
+  ])
+}
 
 startInquire();
 
