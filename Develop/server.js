@@ -205,7 +205,17 @@ function addEmployee() {
   ])
   .then((answers) => {
     // Here we inster the new employee into the database
-  })
+    const sql = "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
+    const values = [answers.title, answers.salary, answers.departmentId];
+
+    db.query(sql, values, (err, result) => {
+      if (err) {
+        console.error("Error adding role:", err);
+        return;
+      }
+      console.log("New role added successfully!");
+    });
+  });
 }
 
 startInquire();
