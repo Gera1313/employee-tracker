@@ -187,8 +187,25 @@ function addEmployee() {
       name: "firstName",
       message: "Enter the first name of the new employee",
     },
-    
+    {
+      type: "input",
+      name: "lastName",
+      message: "Enter the last name of the new employee",
+    },
+    {
+      type: "input",
+      name: "roleId",
+      message: "Enter the role ID for the new employee",
+    },
+    {
+      type: "input",
+      name: "managerId",
+      message: "Enter the manager ID for the new employee (optional):",
+    },
   ])
+  .then((answers) => {
+    // Here we inster the new employee into the database
+  })
 }
 
 startInquire();
