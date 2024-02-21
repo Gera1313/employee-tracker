@@ -220,7 +220,22 @@ function addEmployee() {
 
 // Function to update employee role
 function updateEmployeeRole() {
-  
+  // Here we fetch the list of employees from the database
+  const sql = "SELECT id, CONCAT(first_name, ' ', last_name) AS name FROM employee";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error fetching employees:", err);
+      return;
+    }
+
+    // Here we prompt the user to select an employee
+    inquirer
+    .prompt([
+      {
+        
+      }
+    ])
+  })
 }
 
 startInquire();
