@@ -232,9 +232,20 @@ function updateEmployeeRole() {
     inquirer
     .prompt([
       {
-        
-      }
+        type: "list",
+        name: "employeeId",
+        message: "Select the employee you want to update:",
+        choices: results.map((employee) => ({ name: employee.name, value: employee.id })),
+      },
+      {
+        type: "input",
+        name: "newRoleId",
+        message: "Enter the new role ID for the selected employee:",
+      },
     ])
+    .then((answers) => {
+      // Here we update the employee's role in the database
+    })
   })
 }
 
