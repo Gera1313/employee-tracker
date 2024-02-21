@@ -245,8 +245,18 @@ function updateEmployeeRole() {
     ])
     .then((answers) => {
       // Here we update the employee's role in the database
-    })
-  })
+      const sql = "UPDATE employee SET role_id = ? WHERE id = ?";
+      const values = [answers.newRoleId, answers.employeeId];
+
+      db.query(sql, values, (err, result) => {
+        if (err) {
+          console.error("Error updating employee role:", err);
+          return;
+        }
+        console.log("Employee role updated successfully!");
+      });
+    });
+  });
 }
 
 startInquire();
