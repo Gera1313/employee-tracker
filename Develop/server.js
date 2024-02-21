@@ -53,7 +53,7 @@ function startInquire() {
           addEmployee();
           break;
         case "Update employee role":
-          // TODO: write call function to update employee role
+          updateEmployeeRole();
           break;
         case "Exit":
           // TODO: Handle the exit
@@ -216,6 +216,11 @@ function addEmployee() {
       console.log("New role added successfully!");
     });
   });
+}
+
+// Function to update employee role
+function updateEmployeeRole() {
+  
 }
 
 startInquire();
