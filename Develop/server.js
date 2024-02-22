@@ -56,7 +56,6 @@ function startInquire() {
           updateEmployeeRole();
           break;
         case "Exit":
-          // TODO: Handle the exit
           console.log("Exiting...");
           db.end(); //closes the database
           break;
@@ -119,61 +118,62 @@ function viewAllEmployees() {
 
 // Function to add a department
 function addDepartment() {
-    inquirer
+  inquirer
     .prompt([
-        {
-            type: "input",
-            name: "departmentName",
-            message: "Enter the name of the new department",
-        },
+      {
+        type: "input",
+        name: "departmentName",
+        message: "Enter the name of the new department",
+      },
     ])
     .then((answers) => {
-        const sql = "INSERT INTO department (name) VALUES (?)";
-        const values = [answers.departmentName];
+      const sql = "INSERT INTO department (name) VALUES (?)";
+      const values = [answers.departmentName];
 
-        db.query(sql, values, (err, result) => {
-            if (err) {
-                console.error("Error adding department:", err);
-                return;
-            }
-            console.log("New department added successfully!");
-        });
+      db.query(sql, values, (err, result) => {
+        if (err) {
+          console.error("Error adding department:", err);
+          return;
+        }
+        console.log("New department added successfully!");
+      });
     });
 }
 
 // Function to add a role
 function addRole() {
-    // this will prompt user to enter role details
-    inquirer
+  // this will prompt user to enter role details
+  inquirer
     .prompt([
-        {
-            type: "input",
-            name: "title",
-            message: "Enter the title of the new role:",
-        },
-        {
-            type: "number",
-            name: "salary",
-            message: "Enter the salary for the new role:",
-        },
-        {
-            type: "input",
-            name: "departmentId",
-            message: "Enter the departmenet ID for the new role:",
-        },
+      {
+        type: "input",
+        name: "title",
+        message: "Enter the title of the new role:",
+      },
+      {
+        type: "number",
+        name: "salary",
+        message: "Enter the salary for the new role:",
+      },
+      {
+        type: "input",
+        name: "departmentId",
+        message: "Enter the departmenet ID for the new role:",
+      },
     ])
     .then((answers) => {
-        // Here we instert the new role into the database
-        const sql = "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
-        const values = [answers.title, answers.salary, answers.departmentId];
+      // Here we instert the new role into the database
+      const sql =
+        "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
+      const values = [answers.title, answers.salary, answers.departmentId];
 
-        db.query(sql, values, (err, result) => {
-            if (err) {
-                console.error("Error adding role:", err);
-                return;
-            }
-            console.log("New role added successfully!");
-        });
+      db.query(sql, values, (err, result) => {
+        if (err) {
+          console.error("Error adding role:", err);
+          return;
+        }
+        console.log("New role added successfully!");
+      });
     });
 }
 
@@ -181,47 +181,49 @@ function addRole() {
 function addEmployee() {
   // this will prompt the user to add employee details
   inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "firstName",
-      message: "Enter the first name of the new employee",
-    },
-    {
-      type: "input",
-      name: "lastName",
-      message: "Enter the last name of the new employee",
-    },
-    {
-      type: "input",
-      name: "roleId",
-      message: "Enter the role ID for the new employee",
-    },
-    {
-      type: "input",
-      name: "managerId",
-      message: "Enter the manager ID for the new employee (optional):",
-    },
-  ])
-  .then((answers) => {
-    // Here we inster the new employee into the database
-    const sql = "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
-    const values = [answers.title, answers.salary, answers.departmentId];
+    .prompt([
+      {
+        type: "input",
+        name: "firstName",
+        message: "Enter the first name of the new employee",
+      },
+      {
+        type: "input",
+        name: "lastName",
+        message: "Enter the last name of the new employee",
+      },
+      {
+        type: "input",
+        name: "roleId",
+        message: "Enter the role ID for the new employee",
+      },
+      {
+        type: "input",
+        name: "managerId",
+        message: "Enter the manager ID for the new employee (optional):",
+      },
+    ])
+    .then((answers) => {
+      // Here we inster the new employee into the database
+      const sql =
+        "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
+      const values = [answers.title, answers.salary, answers.departmentId];
 
-    db.query(sql, values, (err, result) => {
-      if (err) {
-        console.error("Error adding role:", err);
-        return;
-      }
-      console.log("New role added successfully!");
+      db.query(sql, values, (err, result) => {
+        if (err) {
+          console.error("Error adding role:", err);
+          return;
+        }
+        console.log("New role added successfully!");
+      });
     });
-  });
 }
 
 // Function to update employee role
 function updateEmployeeRole() {
   // Here we fetch the list of employees from the database
-  const sql = "SELECT id, CONCAT(first_name, ' ', last_name) AS name FROM employee";
+  const sql =
+    "SELECT id, CONCAT(first_name, ' ', last_name) AS name FROM employee";
   db.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching employees:", err);
@@ -230,32 +232,35 @@ function updateEmployeeRole() {
 
     // Here we prompt the user to select an employee
     inquirer
-    .prompt([
-      {
-        type: "list",
-        name: "employeeId",
-        message: "Select the employee you want to update:",
-        choices: results.map((employee) => ({ name: employee.name, value: employee.id })),
-      },
-      {
-        type: "input",
-        name: "newRoleId",
-        message: "Enter the new role ID for the selected employee:",
-      },
-    ])
-    .then((answers) => {
-      // Here we update the employee's role in the database
-      const sql = "UPDATE employee SET role_id = ? WHERE id = ?";
-      const values = [answers.newRoleId, answers.employeeId];
+      .prompt([
+        {
+          type: "list",
+          name: "employeeId",
+          message: "Select the employee you want to update:",
+          choices: results.map((employee) => ({
+            name: employee.name,
+            value: employee.id,
+          })),
+        },
+        {
+          type: "input",
+          name: "newRoleId",
+          message: "Enter the new role ID for the selected employee:",
+        },
+      ])
+      .then((answers) => {
+        // Here we update the employee's role in the database
+        const sql = "UPDATE employee SET role_id = ? WHERE id = ?";
+        const values = [answers.newRoleId, answers.employeeId];
 
-      db.query(sql, values, (err, result) => {
-        if (err) {
-          console.error("Error updating employee role:", err);
-          return;
-        }
-        console.log("Employee role updated successfully!");
+        db.query(sql, values, (err, result) => {
+          if (err) {
+            console.error("Error updating employee role:", err);
+            return;
+          }
+          console.log("Employee role updated successfully!");
+        });
       });
-    });
   });
 }
 
