@@ -48,6 +48,8 @@ Have the following packages:
 
 Updates: 
 Feb 12, 2024: Will work on this project and fix the issues. 
+Feb 22, 2024: I'm having trouble accessing the database. Might have to reset my password.
+Feb 22; I had the .env file outside of the directory where the server.js file is in. Issue fixed. 
 
 ## Usage
 
