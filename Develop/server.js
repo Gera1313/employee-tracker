@@ -158,7 +158,7 @@ function addRole() {
       {
         type: "input",
         name: "departmentId",
-        message: "Enter the departmenet ID for the new role:",
+        message: "Enter the department ID for the new role:",
       },
     ])
     .then((answers) => {
@@ -206,15 +206,15 @@ function addEmployee() {
     .then((answers) => {
       // Here we inster the new employee into the database
       const sql =
-        "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
-      const values = [answers.title, answers.salary, answers.departmentId];
+      "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
+      const values = [answers.firstName, answers.lastName, answers.roleId, answers.managerId];
 
       db.query(sql, values, (err, result) => {
         if (err) {
-          console.error("Error adding role:", err);
+          console.error("Error adding employee:", err);
           return;
         }
-        console.log("New role added successfully!");
+        console.log("New employee added successfully!");
       });
     });
 }
