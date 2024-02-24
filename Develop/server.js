@@ -206,8 +206,13 @@ function addEmployee() {
     .then((answers) => {
       // Here we inster the new employee into the database
       const sql =
-      "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
-      const values = [answers.firstName, answers.lastName, answers.roleId, answers.managerId];
+        "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
+      const values = [
+        answers.firstName,
+        answers.lastName,
+        answers.roleId,
+        answers.managerId,
+      ];
 
       db.query(sql, values, (err, result) => {
         if (err) {
