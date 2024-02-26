@@ -48,9 +48,14 @@ Have the following packages:
 
 Updates: 
 Feb 12, 2024: Will work on this project and fix the issues. 
+
 Feb 22: I'm having trouble accessing the database. Might have to reset my password.
+
 Feb 22: I had the .env file outside of the directory where the server.js file is in. Issue fixed. 
+
 Feb 23: Functionality does not seem to be working. Will test and fix. 
+
+Feb 25: Fixed and can see database data in command-line. Encountered an error in addRole function. 
 
 ## Usage
 

@@ -148,7 +148,7 @@ function addRole() {
       {
         type: "input",
         name: "title",
-        message: "Enter the title of the new role:",
+        message: "Enter the name of the new role:",
       },
       {
         type: "number",
@@ -158,7 +158,7 @@ function addRole() {
       {
         type: "input",
         name: "departmentId",
-        message: "Enter the department ID for the new role:",
+        message: "Enter the department for the new role:",
       },
     ])
     .then((answers) => {
