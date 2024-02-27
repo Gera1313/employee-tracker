@@ -55,7 +55,11 @@ Feb 26: Have completed the project. Fixed all of the errors and is fully functio
 
 The following images show the web application's appearance and functionality. 
 
+Home screen: 
+
 ![Home](./Assets/Images/Home.png) 
+
+When you select View All Employees: 
 
 ![View All Employees Database](./Assets/Images/DB.png) 
 
@@ -63,7 +67,7 @@ The following images show the web application's appearance and functionality.
 
 [Repository](https://github.com/Gera1313/employee-tracker)
 
-[Video](https://youtu.be/MP4zhBCbCsM)
+[Walkthrough Video](https://youtu.be/MP4zhBCbCsM)
 
 ## License
 
