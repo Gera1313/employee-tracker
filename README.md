@@ -53,7 +53,7 @@ Feb 26: Have completed the project. Fixed all of the errors and is fully functio
 
 ## Usage
 
-The following images show the web application's appearance and functionality. Keep in mind this is a work in progress. It is not complete yet. 
+The following images show the web application's appearance and functionality. 
 
 ![A generated README file](./Assets/Images/Home.png) 
 
