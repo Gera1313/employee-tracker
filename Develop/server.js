@@ -142,39 +142,51 @@ function addDepartment() {
 
 // Function to add a role
 function addRole() {
-  // this will prompt user to enter role details
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "title",
-        message: "Enter the name of the new role:",
-      },
-      {
-        type: "number",
-        name: "salary",
-        message: "Enter the salary for the new role:",
-      },
-      {
-        type: "input",
-        name: "departmentId",
-        message: "Enter the department for the new role:",
-      },
-    ])
-    .then((answers) => {
-      // Here we instert the new role into the database
-      const sql =
-        "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
-      const values = [answers.title, answers.salary, answers.departmentId];
+  // Fetch department names and IDs from the database
+  const sql = "SELECT id, name FROM department";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error retrieving departments:", err);
+      return;
+    }
+    // Prompts the user to select a department
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "title",
+          message: "Enter the name of the new role:",
+        },
+        {
+          type: "number",
+          name: "salary",
+          message: "Enter the salary for the new role:",
+        },
+        {
+          type: "list",
+          name: "departmentId",
+          message: "Select the department for the new role:",
+          choices: results.map((department) => ({
+            name: department.name,
+            value: department.id,
+          })),
+        },
+      ])
+      .then((answers) => {
+        // Inserts the new role into the database
+        const sql =
+          "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
+        const values = [answers.title, answers.salary, answers.departmentId];
 
-      db.query(sql, values, (err, result) => {
-        if (err) {
-          console.error("Error adding role:", err);
-          return;
-        }
-        console.log("New role added successfully!");
+        db.query(sql, values, (err, result) => {
+          if (err) {
+            console.error("Error adding role:", err);
+            return;
+          }
+          console.log("New role added successfully!");
+        });
       });
-    });
+  });
 }
 
 // Function to add an employee
