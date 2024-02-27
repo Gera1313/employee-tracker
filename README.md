@@ -55,18 +55,15 @@ Feb 26: Have completed the project. Fixed all of the errors and is fully functio
 
 The following images show the web application's appearance and functionality. 
 
-![A generated README file](./Assets/Images/Home.png) 
+![Home](./Assets/Images/Home.png) 
+
+![View All Employees Database](./Assets/Images/DB.png) 
 
 ## Links
 
 [Repository](https://github.com/Gera1313/employee-tracker)
 
 [Video](https://youtu.be/MP4zhBCbCsM)
-
-
-## Credits
-
-Would like to thank my classmates and work colleagues for the guidance. 
 
 ## License
 
