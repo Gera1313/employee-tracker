@@ -71,6 +71,8 @@ This walkthrough video is the old one before I fixed all of the bugs and errors,
 
 [Walkthrough Video](https://youtu.be/MP4zhBCbCsM)
 
+I will keep this old walkthrough video to show you how I have improved. 
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
