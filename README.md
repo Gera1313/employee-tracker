@@ -67,6 +67,7 @@ When you select View All Employees:
 
 [Repository](https://github.com/Gera1313/employee-tracker)
 
+This walkthrough video is the old one before I fixed all of the bugs and errors. It is fully functional now. 
 [Walkthrough Video](https://youtu.be/MP4zhBCbCsM)
 
 ## License
